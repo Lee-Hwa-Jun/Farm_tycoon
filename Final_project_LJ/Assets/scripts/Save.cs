@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Save : MonoBehaviour
 {
+    public int[] farm_list = new int[15];
     public int[] property_int = new int[] { 0, 0, 0, 0, 0, 0, 0 };
     float timer = 0.0f;
     void Update()
