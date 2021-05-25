@@ -82,6 +82,10 @@ public class All_event : MonoBehaviour
         {
             this_farm.GetComponent<Livestock>().add_lion();
         }
+        if (def == "add_dragon")
+        {
+            this_farm.GetComponent<Livestock>().add_dragon();
+        }
         if (def == "del_animal")
         {
             this_farm.GetComponent<Livestock>().del_animal(information);

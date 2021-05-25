@@ -710,15 +710,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 0}
-  fox: {fileID: 1698060286047908, guid: e8b9e166c8b997f4cb6b716f551a57e7, type: 3}
+  fox: {fileID: 0}
+  dragon: {fileID: 1674130526759142, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 3}
   animal_spot: {fileID: 886268402}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 0}
+  mission: 0
 --- !u!114 &27871275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +737,7 @@ MonoBehaviour:
   active: 0
   menu: {fileID: 624038214}
   text: {fileID: 558215882}
-  animal: "\uC5EC\uC6B0"
+  animal: "\uC6A9"
 --- !u!4 &27871276
 Transform:
   m_ObjectHideFlags: 0
@@ -907,7 +910,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  information: 5
+  information: 6
   tmp: 0
   price: 0
   unit: 
@@ -3728,6 +3731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987a50c2e58e5394f9f362276ac02409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farm_list: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   property_int: 00000000000000000000000000000000000000000000000000000000
 --- !u!1001 &174020232
 PrefabInstance:
@@ -9109,7 +9113,7 @@ MonoBehaviour:
   active: 0
   menu: {fileID: 624038214}
   text: {fileID: 558215882}
-  animal: "\uC5EC\uC6B0"
+  animal: "\uB4DC\uB798\uACE4"
 --- !u!4 &480182109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6662174415517613310, guid: 81dad7d5552c9a341b390c79338fe0a4,
@@ -11912,7 +11916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &624038215
 Transform:
   m_ObjectHideFlags: 0
@@ -16164,7 +16168,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880376590}
-  m_Text: "\uC5EC\uC6B0\uB294 \uAD00\uAD11\uAC1D\uC744 3\uBA85\n\uB298\uB824\uC90D\uB2C8\uB2E4."
+  m_Text: "\uB4DC\uB798\uACE4\uC740 \uB79C\uB364\uD55C \uB3C8\uC744 \n\uC90D\uB2C8\uB2E4."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -22129,7 +22133,7 @@ GameObject:
   - component: {fileID: 1256358417}
   - component: {fileID: 1256358418}
   m_Layer: 0
-  m_Name: num_agg_add
+  m_Name: num_egg_add
   m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23739,15 +23743,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 0}
   fox: {fileID: 1698060286047908, guid: e8b9e166c8b997f4cb6b716f551a57e7, type: 3}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 2068504202}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 0}
+  mission: 0
 --- !u!1001 &1351050289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28078,7 +28085,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621472694}
-  m_Text: "\uC5EC\uC6B0 5\uB9CC\uC6D0"
+  m_Text: "\uB4DC\uB798\uACE4 5\uB9CC\uC6D0"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -30447,15 +30454,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 1005682101203760, guid: 4a01dab078dea2f43b221a2fe4c5d874, type: 3}
   fox: {fileID: 0}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 924647196}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 8300000, guid: 6198a4c64ba3920499525e389f5a68f2, type: 3}
+  mission: 0
 --- !u!82 &1757833659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32640,7 +32650,7 @@ GameObject:
   - component: {fileID: 1886397586}
   - component: {fileID: 1886397585}
   m_Layer: 0
-  m_Name: num_agg
+  m_Name: num_egg
   m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34688,7 +34698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a907439710d4e9f4688981373fe7ecf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  def: add_fox
+  def: add_dragon
   link: {fileID: 0}
   line: {fileID: 0}
   plant: {fileID: 0}
@@ -36654,7 +36664,7 @@ GameObject:
   - component: {fileID: 2132014658}
   - component: {fileID: 2132014657}
   m_Layer: 0
-  m_Name: agg
+  m_Name: egg
   m_TagString: button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

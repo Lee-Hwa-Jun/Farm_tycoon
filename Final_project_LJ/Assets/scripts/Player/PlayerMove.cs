@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
     public int information;
 
     private bool isMove = false;
-    private bool isLook = false;
 
     public float m_DoubleClickSecond = 0.25f;
     private bool m_IsOneClick = false;
@@ -60,25 +59,21 @@ public class PlayerMove : MonoBehaviour
             {
                 img.color = new Color(0, 0, 255);
                 ishighlight = true;
-                //isLook = true;
             }
             else if (hit.collider.tag == "hidden1" || hit.collider.tag == "hidden2")
             {
                 img.color = new Color(0, 255, 0);
                 ishighlight = true;
-                //isLook = false;
             }
             else
             {
                 ishighlight = false;
-                //isLook = false;
             }
         }
 
         else
         {
             img.color = img_color; 
-            //isLook = false;
         }
         //자산 업데이트
         for (int i = 0; i < 7; i++)

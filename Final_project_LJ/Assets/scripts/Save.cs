@@ -13,6 +13,7 @@ public class Save : MonoBehaviour
         if (timer > 60.0f) //10분마다 오토저장
         {
             SaveData();
+            GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("AutoSaved");
             Debug.Log("오토저장완료");
             timer = 0;
         }
@@ -31,7 +32,6 @@ public class Save : MonoBehaviour
             }
         }
 
-        print(SaveArr); // 0,0,1,0,0....으로 저장된 strArr
         GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("Saved");
         PlayerPrefs.SetString("Data", SaveArr); // PlyerPrefs에 문자열 형태로 저장
     }
