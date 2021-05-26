@@ -500,7 +500,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007962592627808
 GameObject:
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007962751877811
 GameObject:
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007962772660968
 GameObject:
@@ -2610,11 +2610,11 @@ MonoBehaviour:
   - {fileID: 6029007963887035111}
   - {fileID: 6029007963607764462}
   information: -1
-  tmp: 0
+  tmp: 2
   price: 4000
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963082668930
 GameObject:
@@ -3160,11 +3160,11 @@ MonoBehaviour:
   - {fileID: 6029007963887035111}
   - {fileID: 6029007963607764462}
   information: -1
-  tmp: 0
+  tmp: 1
   price: 2000
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963178889029
 GameObject:
@@ -3770,7 +3770,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963282858306
 GameObject:
@@ -3934,7 +3934,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963337957064
 GameObject:
@@ -6212,7 +6212,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963886694433
 GameObject:
@@ -7008,7 +7008,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007963980711867
 GameObject:
@@ -7142,7 +7142,7 @@ MonoBehaviour:
   price: 0
   unit: 
   text: {fileID: 0}
-  this_farm: {fileID: 0}
+  this_farm: {fileID: 6029007964355291061}
   sell_button: {fileID: 0}
 --- !u!1 &6029007964007126395
 GameObject:

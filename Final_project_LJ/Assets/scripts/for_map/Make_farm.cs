@@ -8,16 +8,25 @@ public class Make_farm : MonoBehaviour
     public TextMesh buy_text,sell_text;
     private GameObject child_farm;
     private int price = 50000;
+    public int farm_idx;
+    public int[] livestock_list = new int[2];
+    public int[] plant_list = new int[4];
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void make_farm()
+    {
+        child_farm = Instantiate(farm, this.transform.position + new Vector3(-4.8f, 0f, -0.5f), Quaternion.identity);
+        child_farm.transform.SetParent(this.transform);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,13 +37,14 @@ public class Make_farm : MonoBehaviour
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= price)
                 {
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
-                    child_farm = Instantiate(farm, this.transform.position + new Vector3(-4.8f, 0f, -0.5f), Quaternion.identity);
-                    child_farm.transform.SetParent(this.transform);
+                    make_farm();
                     GameObject.Find("Body").GetComponent<PlayerMove>().information = 0;
                     message.SetActive(false);
                     buy.SetActive(true);
 
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
+                    GameObject.Find("SaveBtn").GetComponent<Save>().isfarm_list[farm_idx] = 1;
+
                 }
                 else
                 {

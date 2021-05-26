@@ -24,9 +24,11 @@ public class All_event : MonoBehaviour
         {
             if (line.transform.childCount == 1)
             {
+                int idx = GameObject.Find("Body").GetComponent<PlayerMove>().information;
                 GameObject tmp = line.transform.GetChild(0).gameObject;
                 Destroy(tmp);
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("삭제 되었습니다.");
+                this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 0;
             }
             else
             {
@@ -48,6 +50,7 @@ public class All_event : MonoBehaviour
                     menu();
 
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
+                    this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = tmp;
                 }
                 else
                 {
@@ -146,173 +149,3 @@ public class All_event : MonoBehaviour
         GameObject.Find("Body").GetComponent<PlayerMove>().information = information;
     }
 }
-
-/*
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class All_event : MonoBehaviour
-{
-    public string def;
-    public GameObject link;
-    public GameObject line,plant;
-    public GameObject[] lines = new GameObject[4];
-    public int information,tmp=0,price;
-    public string unit;
-    public TextMesh text;
-    public GameObject this_farm,sell_button;
-
-    public void init()
-    {
-        if(def == "menu")
-        {
-            menu();
-        //link필요
-        }
-        if(def == "plant_del")
-        {
-            plant_del();
-            //line필요
-        }
-        if(def == "plant_add")
-        {
-            plant_add();
-            //lines,plant필요
-        }
-        if (def == "add_chicken")
-        {
-            add_chicken();
-        }
-        if (def == "add_cow")
-        {
-            add_cow();
-        }
-        if (def == "add_pig")
-        {
-            add_pig();
-        }
-        if (def == "add_fox")
-        {
-            add_fox();
-        }
-        if (def == "add_lion")
-        {
-            add_lion();
-        }
-        if (def == "del_animal")
-        {
-            del_animal();
-        }
-
-        if(def == "add_num")
-        {
-            add_num();
-        }
-        if(def == "sub_num")
-        {
-            sub_num();
-        }
-        if(def == "sell_something")
-        {
-            sell_something();
-        }
-    }
-    public void menu()
-    {
-        link.SetActive(true);
-        this.transform.parent.gameObject.SetActive(false);
-        GameObject.Find("Body").GetComponent<PlayerMove>().information = information;
-    }
-    public void plant_del()
-    {
-        if (line.transform.childCount == 1)
-        {
-            GameObject tmp = line.transform.GetChild(0).gameObject;
-            Destroy(tmp);
-            GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("삭제 되었습니다.");
-        }
-        else
-        {
-            Debug.Log("error");
-        }
-    }
-    public void plant_add()
-    {
-        int idx = GameObject.Find("Body").GetComponent<PlayerMove>().information;
-        if (lines[idx].transform.childCount == 0)
-        {
-            if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= price)
-            {
-                GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
-                Vector3 line_spot_p = lines[idx].transform.position;
-                GameObject _obj = Instantiate(plant, line_spot_p, Quaternion.identity) as GameObject;
-                _obj.transform.parent = lines[idx].gameObject.transform;
-                menu();
-
-                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
-            }
-            else
-            {
-                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("돈이 부족합니다.");
-                menu();
-            }
-        }
-        else
-        {
-            GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("이미 농사중인 곳입니다.");
-            menu();
-        }
-    }
-
-    public void add_chicken()
-    {
-        this_farm.GetComponent<Livestock>().add_chicken();
-    }
-    public void add_cow()
-    {
-        this_farm.GetComponent<Livestock>().add_cow();
-    }
-    public void add_pig()
-    {
-        this_farm.GetComponent<Livestock>().add_pig();
-    }
-    public void add_fox()
-    {
-        this_farm.GetComponent<Livestock>().add_fox();
-    }
-    public void add_lion()
-    {
-        this_farm.GetComponent<Livestock>().add_lion();
-    }
-    public void del_animal()
-    {
-        this_farm.GetComponent<Livestock>().del_animal(information);
-    }
-
-    public void add_num()
-    {
-        sell_button.GetComponent<All_event>().tmp += information;
-        text.text = sell_button.GetComponent<All_event>().tmp.ToString() + unit;
-    }
-
-    public void sub_num()
-    {
-        if(sell_button.GetComponent<All_event>().tmp- information >= 0)
-        {
-            sell_button.GetComponent<All_event>().tmp -= information;
-            text.text = sell_button.GetComponent<All_event>().tmp.ToString() + unit;
-        }
-    }
-
-    public void sell_something()
-    {
-        //[money, tomatos, cabbages, aggs, milk, baby_pig, big_pig]
-        if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[information] >= tmp)
-        {
-            GameObject.Find("Body").GetComponent<PlayerMove>().property_int[information] -= tmp;
-            GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += tmp * price;
-        }
-    }
-}
- */

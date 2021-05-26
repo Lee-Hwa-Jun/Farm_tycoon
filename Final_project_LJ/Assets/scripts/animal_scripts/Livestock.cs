@@ -14,12 +14,44 @@ public class Livestock : MonoBehaviour
 
     private AudioSource sound;
     public AudioClip chicken_sound, cow_sound, lion_sound;
+    private bool Inst = false;
     // Start is called before the first frame update
     void Start()
     {
         sound = GetComponent<AudioSource>();
-    }
 
+    }
+    void Update()
+    {
+        if (GameObject.Find("SaveBtn").GetComponent<Save>().step == 1&&Inst == false)
+        {
+            Inst = true;
+            int count = this.transform.parent.GetComponent<Make_farm>().livestock_list[1];
+            switch (this.transform.parent.GetComponent<Make_farm>().livestock_list[0])
+            {
+                case 0:
+                    break;
+                case 1:
+                    for (int i = 0; i < count; i++)
+                    {
+                        add_chicken();
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < count; i++)
+                    {
+                        add_pig();
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < count; i++)
+                    {
+                        add_cow();
+                    }
+                    break;
+            }
+        }
+    }
     // Update is called once per frame
     public void add_chicken()
     {
@@ -42,6 +74,8 @@ public class Livestock : MonoBehaviour
         }
         else
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 동물이 있습니다.");
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[0] = 1;
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[1] = chickens.Count;
     }
     public void add_cow()
     {
@@ -64,6 +98,8 @@ public class Livestock : MonoBehaviour
         }
         else
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 동물이 있습니다.");
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[0] = 3;
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[1] = cows.Count;
     }
     public void add_pig()
     {
@@ -87,6 +123,8 @@ public class Livestock : MonoBehaviour
         }
         else
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 동물이 있습니다.");
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[0] = 2;
+        this.transform.parent.GetComponent<Make_farm>().livestock_list[1] = pigs.Count;
     }
 
     public void add_lion()
@@ -218,4 +256,5 @@ public class Livestock : MonoBehaviour
         }
         else sound.Stop();
     }
+
 }
