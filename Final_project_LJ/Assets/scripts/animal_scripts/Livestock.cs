@@ -15,7 +15,7 @@ public class Livestock : MonoBehaviour
     public GameObject animal_spot;
     private AudioSource sound;
     public AudioClip chicken_sound, cow_sound, lion_sound;
-    private bool Inst = false;
+    public bool Inst = false;
     // Start is called before the first frame update
     void Start()
     {

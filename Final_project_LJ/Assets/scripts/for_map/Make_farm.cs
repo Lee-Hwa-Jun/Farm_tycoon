@@ -9,8 +9,8 @@ public class Make_farm : MonoBehaviour
     private GameObject child_farm;
     private int price = 50000;
     public int farm_idx;
-    public int[] livestock_list = new int[2];
-    public int[] plant_list = new int[4];
+    public int[] livestock_list = { 0,0};
+    public int[] plant_list = { 0, 0, 0, 0 };
     // Start is called before the first frame update
     void Start()
     {
