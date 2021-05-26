@@ -20,6 +20,7 @@ public class Save : MonoBehaviour
         if (timer > 60.0f) //10분마다 오토저장
         {
             SaveData();
+            GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("AutoSaved");
             Debug.Log("오토저장완료");
             timer = 0;
         }
