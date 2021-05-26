@@ -9,9 +9,10 @@ public class Livestock : MonoBehaviour
     public List<GameObject> pigs = new List<GameObject>();
     public List<GameObject> lions = new List<GameObject>();
     public List<GameObject> foxs = new List<GameObject>();
-    public GameObject chicken,cow,pig,lion,fox;
-    public GameObject animal_spot;
+    public List<GameObject> dragons = new List<GameObject>();
 
+    public GameObject chicken, cow, pig, lion, fox,dragon;
+    public GameObject animal_spot;
     private AudioSource sound;
     public AudioClip chicken_sound, cow_sound, lion_sound;
     private bool Inst = false;
@@ -161,7 +162,29 @@ public class Livestock : MonoBehaviour
         else
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("우리가 꽉 찼습니다.");
     }
+    public void add_dragon()
+    {
+        /*int spawnCount = GameObject.Find("hidden1").GetComponent<Livestock>().countSpawnedAnimal + GameObject.Find("hidden2").GetComponent<Livestock>().countSpawnedAnimal;
+        if (dragons.Count < 5)
+        {
+            Debug.Log((spawnCount % 5) - 5 * countSpawnedAnimal);
+            Debug.Log(spawnCount);
+            Debug.Log((spawnCount % 5) - (5 * (countSpawnedAnimal - 1)));
+            bool spawn = (spawnCount % 5) - 5 * (countSpawnedAnimal - 1) == 0;
 
+            Debug.Log("+" + countSpawnedAnimal);
+            Debug.Log(spawn);
+            if (spawn)
+            {
+                Debug.Log("spawn");
+                Vector3 animal_spot_p = animal_spot.transform.position;
+                GameObject _obj = Instantiate(dragon, animal_spot_p, Quaternion.identity) as GameObject;
+                dragons.Add(_obj);
+                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("미션 완료, 드래곤이 생성 되었습니다.");
+                countSpawnedAnimal++;
+            }
+        }*/
+    }
     public void del_animal(int type)
     {
         switch (type){
@@ -233,6 +256,18 @@ public class Livestock : MonoBehaviour
                 }
                 else
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("여우가 없습니다.");
+                break;
+            case 6:
+                if (dragons.Count >= 1)
+                {
+                    int randomMoney = Random.Range(0, 200000);
+                    GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += randomMoney;
+                    Destroy(dragons[0]);
+                    dragons.RemoveAt(0);
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 판매되었습니다." + randomMoney.ToString() + "원을 받았습니다.");
+                }
+                else
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 없습니다.");
                 break;
         }
     }
