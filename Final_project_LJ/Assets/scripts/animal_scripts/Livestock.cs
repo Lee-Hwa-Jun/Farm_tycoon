@@ -10,7 +10,7 @@ public class Livestock : MonoBehaviour
     public List<GameObject> lions = new List<GameObject>();
     public List<GameObject> foxs = new List<GameObject>();
     public List<GameObject> dragons = new List<GameObject>();
-
+    //what
     public GameObject chicken, cow, pig, lion, fox,dragon;
     public GameObject animal_spot;
     private AudioSource sound;
