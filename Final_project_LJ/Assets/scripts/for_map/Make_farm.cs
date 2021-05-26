@@ -6,7 +6,7 @@ public class Make_farm : MonoBehaviour
 {
     public GameObject farm,buy,sell,message;
     public TextMesh buy_text,sell_text;
-    private GameObject child_farm;
+    public GameObject child_farm;
     private int price = 50000;
     public int farm_idx;
     public int[] livestock_list = { 0,0};
@@ -27,6 +27,11 @@ public class Make_farm : MonoBehaviour
     {
         child_farm = Instantiate(farm, this.transform.position + new Vector3(-4.8f, 0f, -0.5f), Quaternion.identity);
         child_farm.transform.SetParent(this.transform);
+        load_data();
+    }
+    public void load_data()
+    {
+        child_farm.GetComponent<Livestock>().load_livestock();
     }
     private void OnCollisionEnter(Collision collision)
     {

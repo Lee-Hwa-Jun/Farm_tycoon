@@ -87,10 +87,20 @@ public class Save : MonoBehaviour
                 GameObject.Find("Body").GetComponent<PlayerMove>().property_int[i] = System.Convert.ToInt32(dataArr[i]); // 문자열 형태로 저장된 값을 정수형으로 변환후 저장
             }
         }
-
+        //가축들
+        if (islivestock.Length != 1)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                farm_spot[i].GetComponent<Make_farm>().livestock_list[0] = int.Parse(islivestock[i * 2]);
+                farm_spot[i].GetComponent<Make_farm>().livestock_list[1] = int.Parse(islivestock[i * 2 + 1]);
+            }
+        }
+        step = 1;
         //농장 자체
         if (isfarmArr.Length != 1)
         {
+            farm_spot[0].GetComponent<Make_farm>().load_data();
             for (int i = 1; i < isfarmArr.Length; i++)//index 0은 기본 농장이기 때문에 1부터 시작
             {
                 if (isfarmArr[i] == "1")
@@ -100,15 +110,8 @@ public class Save : MonoBehaviour
             }
         }
 
-        if (islivestock.Length != 1)
-        {
-            for(int i = 0; i < 16; i++) 
-            {
-                farm_spot[i].GetComponent<Make_farm>().livestock_list[0] = int.Parse(islivestock[i*2]);
-                farm_spot[i].GetComponent<Make_farm>().livestock_list[1] = int.Parse(islivestock[i*2+1]);
-            }
-        }
-        step = 1;
+
+
         Debug.Log("Called");
     }
     

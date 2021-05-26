@@ -710,15 +710,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 0}
   fox: {fileID: 1698060286047908, guid: e8b9e166c8b997f4cb6b716f551a57e7, type: 3}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 886268402}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 0}
+  Inst: 0
 --- !u!114 &27871275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,6 +2539,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 11
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -3440,6 +3444,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 4
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -3935,6 +3940,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 8
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -4050,6 +4056,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 13
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -4976,6 +4983,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 10
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -7795,6 +7803,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 14
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -9091,6 +9100,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 6
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -11274,7 +11284,7 @@ GameObject:
   - component: {fileID: 587987956}
   m_Layer: 0
   m_Name: reset_text
-  m_TagString: button
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13825,6 +13835,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 5
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -15970,83 +15981,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb422acdc199d6e42910f589b81c283b, type: 3}
---- !u!1 &859689739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 859689740}
-  - component: {fileID: 859689742}
-  - component: {fileID: 859689741}
-  m_Layer: 5
-  m_Name: Text (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &859689740
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859689739}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -1.08}
-  m_LocalScale: {x: 0.0072124056, y: 0.0100000035, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1161551877}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.223}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &859689741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859689739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: SPOT
---- !u!222 &859689742
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859689739}
-  m_CullTransparentMesh: 0
 --- !u!4 &865198588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6662174415517613310, guid: 81dad7d5552c9a341b390c79338fe0a4,
@@ -20938,106 +20872,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153940764}
   m_CullTransparentMesh: 0
---- !u!1 &1161551876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1161551877}
-  - component: {fileID: 1161551880}
-  - component: {fileID: 1161551879}
-  - component: {fileID: 1161551878}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1161551877
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161551876}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2106827304}
-  - {fileID: 859689740}
-  m_Father: {fileID: 1788276820}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1161551878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161551876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1161551879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161551876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &1161551880
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161551876}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!4 &1165730147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6695003846789372269, guid: bae468b3a6b9ea141967f3cfbe601352,
@@ -22045,6 +21879,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 12
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -23962,15 +23797,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 0}
   fox: {fileID: 1698060286047908, guid: e8b9e166c8b997f4cb6b716f551a57e7, type: 3}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 2068504202}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 0}
+  Inst: 0
 --- !u!1001 &1351050289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25124,6 +24962,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 9
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -26504,6 +26343,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 7
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -30676,15 +30516,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 0}
   cow: {fileID: 0}
   pig: {fileID: 0}
   lion: {fileID: 1005682101203760, guid: 4a01dab078dea2f43b221a2fe4c5d874, type: 3}
   fox: {fileID: 0}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 924647196}
   chicken_sound: {fileID: 0}
   cow_sound: {fileID: 0}
   lion_sound: {fileID: 8300000, guid: 6198a4c64ba3920499525e389f5a68f2, type: 3}
+  Inst: 0
 --- !u!82 &1757833659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31179,7 +31022,6 @@ Transform:
   m_LocalPosition: {x: 4.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.099999994, z: 1}
   m_Children:
-  - {fileID: 1161551877}
   - {fileID: 1635093280}
   m_Father: {fileID: 1406094026}
   m_RootOrder: 0
@@ -31202,6 +31044,7 @@ MonoBehaviour:
   message: {fileID: 0}
   buy_text: {fileID: 0}
   sell_text: {fileID: 0}
+  child_farm: {fileID: 382596431}
   farm_idx: 0
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -33510,6 +33353,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 2
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -34333,6 +34177,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 3
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -35266,6 +35111,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 15
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -35381,6 +35227,7 @@ MonoBehaviour:
   message: {fileID: 1177822131}
   buy_text: {fileID: 1408838211}
   sell_text: {fileID: 966134798}
+  child_farm: {fileID: 0}
   farm_idx: 1
   livestock_list: 0000000000000000
   plant_list: 00000000000000000000000000000000
@@ -36496,83 +36343,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1114493251}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2106827303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2106827304}
-  - component: {fileID: 2106827306}
-  - component: {fileID: 2106827305}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2106827304
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106827303}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -1.08}
-  m_LocalScale: {x: 0.0072123995, y: 0.01, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1161551877}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.084}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2106827305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106827303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: FARM
---- !u!222 &2106827306
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106827303}
-  m_CullTransparentMesh: 0
 --- !u!4 &2107679907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6476529798019570804, guid: 0fe65fec31a96cc49a3146a03f035c48,

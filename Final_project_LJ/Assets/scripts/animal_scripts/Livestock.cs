@@ -24,34 +24,6 @@ public class Livestock : MonoBehaviour
     }
     void Update()
     {
-        if (GameObject.Find("SaveBtn").GetComponent<Save>().step == 1&&Inst == false)
-        {
-            Inst = true;
-            int count = this.transform.parent.GetComponent<Make_farm>().livestock_list[1];
-            switch (this.transform.parent.GetComponent<Make_farm>().livestock_list[0])
-            {
-                case 0:
-                    break;
-                case 1:
-                    for (int i = 0; i < count; i++)
-                    {
-                        add_chicken();
-                    }
-                    break;
-                case 2:
-                    for (int i = 0; i < count; i++)
-                    {
-                        add_pig();
-                    }
-                    break;
-                case 3:
-                    for (int i = 0; i < count; i++)
-                    {
-                        add_cow();
-                    }
-                    break;
-            }
-        }
     }
     // Update is called once per frame
     public void add_chicken()
@@ -292,4 +264,33 @@ public class Livestock : MonoBehaviour
         else sound.Stop();
     }
 
+
+    public void load_livestock()
+    {
+        Inst = true;
+        int count = this.transform.parent.GetComponent<Make_farm>().livestock_list[1];
+        switch (this.transform.parent.GetComponent<Make_farm>().livestock_list[0])
+        {
+            case 0:
+                break;
+            case 1:
+                for (int i = 0; i < count; i++)
+                {
+                    add_chicken();
+                }
+                break;
+            case 2:
+                for (int i = 0; i < count; i++)
+                {
+                    add_pig();
+                }
+                break;
+            case 3:
+                for (int i = 0; i < count; i++)
+                {
+                    add_cow();
+                }
+                break;
+        }
+    }
 }
