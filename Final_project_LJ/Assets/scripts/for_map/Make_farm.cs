@@ -14,7 +14,6 @@ public class Make_farm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -32,6 +31,7 @@ public class Make_farm : MonoBehaviour
     public void load_data()
     {
         child_farm.GetComponent<Livestock>().load_livestock();
+        child_farm.GetComponent<All_plant_manage>().load_plant(plant_list);
     }
 
     public void reset_all()
@@ -48,6 +48,7 @@ public class Make_farm : MonoBehaviour
         if (child_farm != null)
         {
             child_farm.GetComponent<Livestock>().del_all_animal();
+            child_farm.GetComponent<All_plant_manage>().reset_plant();
         }
     }
     private void OnCollisionEnter(Collision collision)

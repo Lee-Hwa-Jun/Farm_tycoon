@@ -8425,6 +8425,7 @@ GameObject:
   - component: {fileID: 6029007964355291018}
   - component: {fileID: 6029007964355291019}
   - component: {fileID: 82435242186336090}
+  - component: {fileID: 1388344632640837349}
   m_Layer: 0
   m_Name: FARM
   m_TagString: Untagged
@@ -8574,6 +8575,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1388344632640837349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029007964355291061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d5a053c862a9c41b78661507e55774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tomato: {fileID: 6029007963173899696}
+  cabbage: {fileID: 6029007963067801411}
+  del_button:
+  - {fileID: 6029007963295371864}
+  - {fileID: 6029007962735822007}
+  - {fileID: 6029007963980711867}
+  - {fileID: 6029007963874900331}
 --- !u!1 &6029007964357225472
 GameObject:
   m_ObjectHideFlags: 0

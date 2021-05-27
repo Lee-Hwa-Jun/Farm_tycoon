@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44664675, g: 0.49649334, b: 0.57485896, a: 1}
+  m_IndirectSpecularColor: {r: 0.44664693, g: 0.49649364, b: 0.5748597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1253,75 +1253,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6029007962722299050}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &58038638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 218964573}
-    m_Modifications:
-    - target: {fileID: 7680367619980920262, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_Name
-      value: Tomato
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0029745102
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05453682
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0036849976
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4831380220386892692, guid: 251df160a20dae34eb849a82dcaa15d7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 251df160a20dae34eb849a82dcaa15d7, type: 3}
 --- !u!1001 &58145906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4320,12 +4251,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1861694929}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &218964573 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6029007964108839111, guid: 7c3d8b401b141fa478f80474d8b60d73,
-    type: 3}
-  m_PrefabInstance: {fileID: 6029007962722299050}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &224203221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7120,102 +7045,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6029007962722299050}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &382596433
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382596431}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &385249625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6662174415517613310, guid: 81dad7d5552c9a341b390c79338fe0a4,
@@ -37445,10 +37274,20 @@ PrefabInstance:
       propertyPath: price
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 6029007963067801412, guid: 7c3d8b401b141fa478f80474d8b60d73,
+        type: 3}
+      propertyPath: unit
+      value: cabbage
+      objectReference: {fileID: 0}
     - target: {fileID: 6029007963173899701, guid: 7c3d8b401b141fa478f80474d8b60d73,
         type: 3}
       propertyPath: price
       value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029007963173899701, guid: 7c3d8b401b141fa478f80474d8b60d73,
+        type: 3}
+      propertyPath: unit
+      value: tomato
       objectReference: {fileID: 0}
     - target: {fileID: 6029007963274013399, guid: 7c3d8b401b141fa478f80474d8b60d73,
         type: 3}

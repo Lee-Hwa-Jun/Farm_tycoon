@@ -36,7 +36,8 @@ public class Save : MonoBehaviour
         property_int = GameObject.Find("Body").GetComponent<PlayerMove>().property_int;
         string SaveArr = ""; // 문자열 생성
         string isfarmArr = ""; // 문자열 생성
-        string islivestock = ""; // 문자열 생성
+        string livestock = ""; // 문자열 생성
+        string plants = ""; // 문자열 생성
 
         for (int i = 0; i < property_int.Length; i++) // 배열과 ','를 번갈아가며 tempStr에 저장
         {
@@ -71,20 +72,43 @@ public class Save : MonoBehaviour
         }
         for (int i = 0; i < 16; i++) // 배열과 ','를 번갈아가며 tempStr에 저장
         {
-            islivestock = islivestock + livestock_list[i,0] + "," +livestock_list[i, 1];
+            livestock = livestock + livestock_list[i,0] + "," +livestock_list[i, 1];
             if (i < isfarm_list.Length - 1) // 최대 길이의 -1까지만 ,를 저장
             {
-                islivestock = islivestock + ",";
+                livestock = livestock + ",";
             }
         }
-        PlayerPrefs.SetString("islivestock", islivestock); // PlyerPrefs에 문자열 형태로 저장
+        PlayerPrefs.SetString("livestock", livestock); // PlyerPrefs에 문자열 형태로 저장
+
+        //농장 마다의 식물들
+        for (int i = 0; i < 16; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                plant_list[i, j] = farm_spot[i].GetComponent<Make_farm>().plant_list[j];
+            }
+
+        }
+        for (int i = 0; i < 16; i++) // 배열과 ','를 번갈아가며 tempStr에 저장
+        {
+            plants = plants + plant_list[i, 0] + "," + plant_list[i, 1] + "," + plant_list[i, 2] + "," + plant_list[i, 3];
+
+            if (i < isfarm_list.Length - 1) // 최대 길이의 -1까지만 ,를 저장
+            {
+                plants = plants + ",";
+            }
+        }
+        Debug.Log(plants + "@@");
+        PlayerPrefs.SetString("plants", plants); // PlyerPrefs에 문자열 형태로 저장
+        
 
     }
     public void CallData()
     {
         string[] dataArr = PlayerPrefs.GetString("Data").Split(','); // PlayerPrefs에서 불러온 값을 Split 함수를 통해 문자열의 ,로 구분하여 배열에 저장
         string[] isfarmArr = PlayerPrefs.GetString("isFarm").Split(',');
-        string[] islivestock = PlayerPrefs.GetString("islivestock").Split(',');
+        string[] livestock = PlayerPrefs.GetString("livestock").Split(',');
+        string[] plants = PlayerPrefs.GetString("plants").Split(',');
 
         //자산
         if (dataArr.Length != 1)
@@ -95,15 +119,27 @@ public class Save : MonoBehaviour
             }
         }
         //가축들
-        if (islivestock.Length != 1)
+        if (livestock.Length != 1)
         {
             for (int i = 0; i < 16; i++)
             {
-                farm_spot[i].GetComponent<Make_farm>().livestock_list[0] = int.Parse(islivestock[i * 2]);
-                farm_spot[i].GetComponent<Make_farm>().livestock_list[1] = int.Parse(islivestock[i * 2 + 1]);
+                farm_spot[i].GetComponent<Make_farm>().livestock_list[0] = int.Parse(livestock[i * 2]);
+                farm_spot[i].GetComponent<Make_farm>().livestock_list[1] = int.Parse(livestock[i * 2 + 1]);
             }
         }
         step = 1;
+        //식물들
+        if (plants.Length != 1)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                farm_spot[i].GetComponent<Make_farm>().plant_list[0] = int.Parse(plants[i*4]);
+                farm_spot[i].GetComponent<Make_farm>().plant_list[1] = int.Parse(plants[(i * 4)+1]);
+                farm_spot[i].GetComponent<Make_farm>().plant_list[2] = int.Parse(plants[(i * 4)+2]);
+                farm_spot[i].GetComponent<Make_farm>().plant_list[3] = int.Parse(plants[(i * 4)+3]);
+            }
+        }
+        step = 2;
         //농장 자체
         if (isfarmArr.Length != 1)
         {
@@ -118,7 +154,7 @@ public class Save : MonoBehaviour
         }
 
 
-
+        Debug.Log(plants + "@@");
         Debug.Log("Called");
     }
     public void reset_list()

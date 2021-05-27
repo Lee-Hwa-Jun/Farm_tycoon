@@ -43,6 +43,10 @@ public class All_event : MonoBehaviour
             {
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= price)
                 {
+                    if(unit == "tomato")
+                        this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 1;
+                    else if (unit == "cabbage")
+                        this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 1;
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
                     Vector3 line_spot_p = lines[idx].transform.position;
                     GameObject _obj = Instantiate(plant, line_spot_p, Quaternion.identity) as GameObject;
@@ -62,6 +66,23 @@ public class All_event : MonoBehaviour
             {
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("이미 농사중인 곳입니다.");
                 menu();
+            }
+            //lines,plant필요
+        }
+        if (def == "plant_load")
+        {
+            int idx = GameObject.Find("Body").GetComponent<PlayerMove>().information;
+            if (lines[idx].transform.childCount == 0)
+            {
+                    if (unit == "tomato")
+                        this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 1;
+                    else if (unit == "cabbage")
+                        this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 1;
+                    GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
+                    Vector3 line_spot_p = lines[idx].transform.position;
+                    GameObject _obj = Instantiate(plant, line_spot_p, Quaternion.identity) as GameObject;
+                    _obj.transform.parent = lines[idx].gameObject.transform;
+                    this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = tmp;
             }
             //lines,plant필요
         }

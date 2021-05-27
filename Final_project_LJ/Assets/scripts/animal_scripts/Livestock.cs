@@ -34,12 +34,9 @@ public class Livestock : MonoBehaviour
             {
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 5000)
                 {
+                    load_chicken();
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= 5000;
-                    Vector3 animal_spot_p = animal_spot.transform.position;
-                    GameObject _obj = Instantiate(chicken, animal_spot_p, Quaternion.identity) as GameObject;
-                    chickens.Add(_obj);
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("닭이 구매되었습니다.");
-                    GameObject.Find("MAP").GetComponent<person_manage>().people += 0.01f;
                 }
             }
             else
@@ -58,12 +55,9 @@ public class Livestock : MonoBehaviour
             {
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 20000)
                 {
+                    load_cow();
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= 20000;
-                    Vector3 animal_spot_p = animal_spot.transform.position;
-                    GameObject _obj = Instantiate(cow, animal_spot_p, Quaternion.identity) as GameObject;
-                    cows.Add(_obj);
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("젖소가 구매되었습니다.");
-                    GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
                 }
             }
             else
@@ -83,12 +77,9 @@ public class Livestock : MonoBehaviour
                 int price = GameObject.Find("Body").GetComponent<Pig_price>().baby;
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= price)
                 {
+                    load_pig();
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
-                    Vector3 animal_spot_p = animal_spot.transform.position;
-                    GameObject _obj = Instantiate(pig, animal_spot_p, Quaternion.identity) as GameObject;
-                    pigs.Add(_obj);
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("돼지가 구매되었습니다.");
-                    GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
                 }
             }
             else
@@ -106,12 +97,9 @@ public class Livestock : MonoBehaviour
         {
             if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 100000)
             {
+                load_lion();
                 GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= 100000;
-                Vector3 animal_spot_p = animal_spot.transform.position;
-                GameObject _obj = Instantiate(lion, animal_spot_p, Quaternion.identity) as GameObject;
-                lions.Add(_obj);
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("사자가 구매되었습니다.");
-                GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
             }
         }
         else
@@ -123,12 +111,9 @@ public class Livestock : MonoBehaviour
         {
             if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 70000)
             {
+                add_fox();
                 GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= 70000;
-                Vector3 animal_spot_p = animal_spot.transform.position;
-                GameObject _obj = Instantiate(fox, animal_spot_p, Quaternion.identity) as GameObject;
-                foxs.Add(_obj);
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("여우가 구매되었습니다.");
-                GameObject.Find("MAP").GetComponent<person_manage>().people += 3 ;
             }
         }
         else
@@ -136,11 +121,59 @@ public class Livestock : MonoBehaviour
     }
     public void add_dragon()
     {
+        load_dragon();
+        GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 생성 되었습니다.");
+    }
+
+    //load 할때 함수들
+    //load 할때 함수들
+    //load 할때 함수들
+    //load 할때 함수들
+    //load 할때 함수들
+    public void load_chicken()
+    {
+                    Vector3 animal_spot_p = animal_spot.transform.position;
+                    GameObject _obj = Instantiate(chicken, animal_spot_p, Quaternion.identity) as GameObject;
+                    chickens.Add(_obj);
+                    GameObject.Find("MAP").GetComponent<person_manage>().people += 0.01f;
+    }
+    public void load_cow()
+    {
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(cow, animal_spot_p, Quaternion.identity) as GameObject;
+        cows.Add(_obj);
+        GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
+    }
+    public void load_pig()
+    {
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(pig, animal_spot_p, Quaternion.identity) as GameObject;
+        pigs.Add(_obj);
+        GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
+    }
+
+    public void load_lion()
+    {
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(lion, animal_spot_p, Quaternion.identity) as GameObject;
+        lions.Add(_obj);
+        GameObject.Find("MAP").GetComponent<person_manage>().people += 0.06f;
+    }
+    public void load_fox()
+    {
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(fox, animal_spot_p, Quaternion.identity) as GameObject;
+        foxs.Add(_obj);
+        GameObject.Find("MAP").GetComponent<person_manage>().people += 3;
+    }
+    public void load_dragon()
+    {
         Vector3 animal_spot_p = animal_spot.transform.position;
         GameObject _obj = Instantiate(dragon, animal_spot_p, Quaternion.identity) as GameObject;
         dragons.Add(_obj);
-        GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 생성 되었습니다.");
     }
+
+
     public void del_animal(int type)
     {
         switch (type){
@@ -307,19 +340,19 @@ public class Livestock : MonoBehaviour
             case 1:
                 for (int i = 0; i < count; i++)
                 {
-                    add_chicken();
+                    load_chicken();
                 }
                 break;
             case 2:
                 for (int i = 0; i < count; i++)
                 {
-                    add_pig();
+                    load_pig();
                 }
                 break;
             case 3:
                 for (int i = 0; i < count; i++)
                 {
-                    add_cow();
+                    load_cow();
                 }
                 break;
         }
