@@ -48,7 +48,7 @@ public class Make_farm : MonoBehaviour
                     buy.SetActive(true);
 
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
-                    GameObject.Find("SaveBtn").GetComponent<Save>().isfarm_list[farm_idx] = 1;
+                    GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list[farm_idx] = 1;
 
                 }
                 else
