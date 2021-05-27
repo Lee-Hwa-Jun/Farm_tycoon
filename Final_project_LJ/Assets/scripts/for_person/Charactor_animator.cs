@@ -63,6 +63,7 @@ public class Charactor_animator : MonoBehaviour
             if (iswave == false)
             {
                 text_change();
+                animator.SetBool("idle", false);
                 animator.SetTrigger("wave");
             }
             iswave = true;
@@ -104,11 +105,11 @@ public class Charactor_animator : MonoBehaviour
 
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) 
     {
-        if(collision.transform.tag == "wall")
+        if(collision.transform.tag == "wall") //2000원을 주고 퇴장
         {
-            GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += 2000;
+            GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += 2000; 
             Destroy(this.gameObject);
         }
         if(collision.transform.tag == "person")
