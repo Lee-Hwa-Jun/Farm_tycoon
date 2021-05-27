@@ -111,7 +111,7 @@ public class Livestock : MonoBehaviour
         {
             if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 70000)
             {
-                add_fox();
+                load_fox();
                 GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= 70000;
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("여우가 구매되었습니다.");
             }
@@ -132,10 +132,10 @@ public class Livestock : MonoBehaviour
     //load 할때 함수들
     public void load_chicken()
     {
-                    Vector3 animal_spot_p = animal_spot.transform.position;
-                    GameObject _obj = Instantiate(chicken, animal_spot_p, Quaternion.identity) as GameObject;
-                    chickens.Add(_obj);
-                    GameObject.Find("MAP").GetComponent<person_manage>().people += 0.01f;
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(chicken, animal_spot_p, Quaternion.identity) as GameObject;
+        chickens.Add(_obj);
+        GameObject.Find("MAP").GetComponent<person_manage>().people += 0.01f;
     }
     public void load_cow()
     {
