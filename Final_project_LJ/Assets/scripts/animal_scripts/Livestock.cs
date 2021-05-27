@@ -157,18 +157,6 @@ public class Livestock : MonoBehaviour
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("닭이 없습니다.");
                 break;
             case 2:
-                if (cows.Count >= 1)
-                {
-                    GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += 20000;
-                    Destroy(cows[0]);
-                    cows.RemoveAt(0);
-                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("젖소가 판매되었습니다.");
-                    GameObject.Find("MAP").GetComponent<person_manage>().people -= 0.06f;
-                }
-                else
-                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("젖소가 없습니다.");
-                break;
-            case 3:
                 int price = GameObject.Find("Body").GetComponent<Pig_price>().big;
                 if (pigs.Count >= 1)
                 {
@@ -189,6 +177,19 @@ public class Livestock : MonoBehaviour
                 else
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("돼지가 없습니다.");
                 break;
+            case 3:
+                if (cows.Count >= 1)
+                {
+                    GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += 20000;
+                    Destroy(cows[0]);
+                    cows.RemoveAt(0);
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("젖소가 판매되었습니다.");
+                    GameObject.Find("MAP").GetComponent<person_manage>().people -= 0.06f;
+                }
+                else
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("젖소가 없습니다.");
+                break;
+
             case 4:
                 if (lions.Count >= 1)
                 {
@@ -244,6 +245,36 @@ public class Livestock : MonoBehaviour
         else
             return false;
     }
+
+    public void del_all_animal()
+    {
+        if (chickens.Count != 0)
+        {
+            int count = chickens.Count;
+            for (int i=0;i< count; i++)
+            {
+                Destroy(chickens[i]);
+            }
+        }
+        else if (pigs.Count != 0)
+        {
+            int count = pigs.Count;
+            for (int i = 0; i < count; i++)
+            {
+                Destroy(pigs[i]);
+            }
+        }
+        else if (cows.Count != 0)
+        {
+            int count = cows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                Destroy(cows[i]);
+            }
+        }
+        else sound.Stop();
+    }
+
     public void animal_sound()
     {
         if (chickens.Count != 0)

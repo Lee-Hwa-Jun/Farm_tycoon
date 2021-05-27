@@ -4331,7 +4331,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  information: 3
+  information: 2
   tmp: 0
   price: 0
   unit: 
@@ -9199,7 +9199,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  information: 2
+  information: 3
   tmp: 0
   price: 0
   unit: 

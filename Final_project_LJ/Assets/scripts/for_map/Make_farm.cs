@@ -33,6 +33,23 @@ public class Make_farm : MonoBehaviour
     {
         child_farm.GetComponent<Livestock>().load_livestock();
     }
+
+    public void reset_all()
+    {
+        for(int i = 0; i < 2; i++)
+        {
+            livestock_list[i] = 0;
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            plant_list[i] = 0;
+        }
+
+        if (child_farm != null)
+        {
+            child_farm.GetComponent<Livestock>().del_all_animal();
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if ( GameObject.Find("Body").GetComponent<PlayerMove>().information == 100)
@@ -41,6 +58,7 @@ public class Make_farm : MonoBehaviour
             {
                 if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= price)
                 {
+                    GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list[farm_idx] = 1;
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
                     make_farm();
                     GameObject.Find("Body").GetComponent<PlayerMove>().information = 0;
@@ -48,7 +66,6 @@ public class Make_farm : MonoBehaviour
                     buy.SetActive(true);
 
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
-                    GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list[farm_idx] = 1;
 
                 }
                 else
@@ -67,11 +84,11 @@ public class Make_farm : MonoBehaviour
         }
         if (GameObject.Find("Body").GetComponent<PlayerMove>().information == -100)
         {
-            if (!child_farm.GetComponent<Livestock>().isanimal())
+            if (child_farm.GetComponent<Livestock>().isanimal() == false)
             {
                 if (child_farm != null)
                 {
-
+                    GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list[farm_idx] = 0;
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += price;
                     child_farm = this.transform.GetChild(1).gameObject;
                     Destroy(child_farm);

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class All_event : MonoBehaviour
 {
     public string def;
@@ -140,12 +140,11 @@ public class All_event : MonoBehaviour
         {
             Debug.Log("Reset");
             GameObject.Find("Body").GetComponent<PlayerMove>().property_int = new int[] { GameObject.Find("Body").GetComponent<PlayerMove>().Start_Money, 0, 0, 0, 0, 0, 0 };
-            GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list = new int[] { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
-            GameObject.Find("SaveMenu").GetComponent<Save>().livestock_list = new int[16, 2];
-            GameObject.Find("SaveMenu").GetComponent<Save>().plant_list = new int[16, 4];
+            GameObject.Find("SaveMenu").GetComponent<Save>().reset_list();
             GameObject.Find("SaveMenu").GetComponent<Save>().SaveData();
+            GameObject.Find("SaveMenu").GetComponent<Save>().CallData();
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("Reset");
-            menu();
+            SceneManager.LoadScene("Main");
         }
 
     }

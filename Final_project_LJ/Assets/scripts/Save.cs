@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Save : MonoBehaviour
 {
-    public int[] isfarm_list = new int[16];
-    public int[,] livestock_list = new int[16,2];
-    public int[,] plant_list = new int[16,4];
+    public int[] isfarm_list;
+    public int[,] livestock_list;
+    public int[,] plant_list;
     public GameObject[] farm_spot = new GameObject[16];
 
 
@@ -14,6 +14,11 @@ public class Save : MonoBehaviour
     float timer = 0.0f;
 
     public int step;
+
+    void Start()
+    {
+        reset_list();
+    }
     void Update()
     {
         timer += Time.deltaTime;
@@ -116,5 +121,33 @@ public class Save : MonoBehaviour
 
         Debug.Log("Called");
     }
-    
+    public void reset_list()
+    {
+        isfarm_list = new int[16];
+        livestock_list = new int[16, 2];
+        plant_list = new int[16, 4];
+        for(int i = 1;i< 16; i++)
+        {
+            isfarm_list[i] = 0;
+        }
+        for (int i = 0; i < 16; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                livestock_list[i,j] = 0;
+            }
+        }
+        for (int i = 0; i < 16; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                plant_list[i, j] = 0;
+            }
+        }
+
+        for(int i = 0; i < 16; i++)
+        {
+            farm_spot[i].GetComponent<Make_farm>().reset_all();
+        }
+    }
 }
