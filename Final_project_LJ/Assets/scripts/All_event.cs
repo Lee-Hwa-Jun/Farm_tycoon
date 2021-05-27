@@ -133,17 +133,17 @@ public class All_event : MonoBehaviour
 
         if (def == "save")
         {
-            Debug.Log("Save");
-            GameObject.Find("SaveBtn").GetComponent<Save>().SaveData();
+            Debug.Log("Save"); 
+            GameObject.Find("SaveMenu").GetComponent<Save>().SaveData();
         }
         if (def == "reset")
         {
             Debug.Log("Reset");
             GameObject.Find("Body").GetComponent<PlayerMove>().property_int = new int[] { GameObject.Find("Body").GetComponent<PlayerMove>().Start_Money, 0, 0, 0, 0, 0, 0 };
-            GameObject.Find("SaveBtn").GetComponent<Save>().isfarm_list = new int[16];
-            GameObject.Find("SaveBtn").GetComponent<Save>().livestock_list = new int[16, 2];
-            GameObject.Find("SaveBtn").GetComponent<Save>().plant_list = new int[16, 4];
-            GameObject.Find("SaveBtn").GetComponent<Save>().SaveData();
+            GameObject.Find("SaveMenu").GetComponent<Save>().isfarm_list = new int[] { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+            GameObject.Find("SaveMenu").GetComponent<Save>().livestock_list = new int[16, 2];
+            GameObject.Find("SaveMenu").GetComponent<Save>().plant_list = new int[16, 4];
+            GameObject.Find("SaveMenu").GetComponent<Save>().SaveData();
             GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("Reset");
             menu();
         }

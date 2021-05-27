@@ -10,7 +10,7 @@ public class Livestock : MonoBehaviour
     public List<GameObject> lions = new List<GameObject>();
     public List<GameObject> foxs = new List<GameObject>();
     public List<GameObject> dragons = new List<GameObject>();
-    //what
+
     public GameObject chicken, cow, pig, lion, fox,dragon;
     public GameObject animal_spot;
     private AudioSource sound;
@@ -136,26 +136,10 @@ public class Livestock : MonoBehaviour
     }
     public void add_dragon()
     {
-        /*int spawnCount = GameObject.Find("hidden1").GetComponent<Livestock>().countSpawnedAnimal + GameObject.Find("hidden2").GetComponent<Livestock>().countSpawnedAnimal;
-        if (dragons.Count < 5)
-        {
-            Debug.Log((spawnCount % 5) - 5 * countSpawnedAnimal);
-            Debug.Log(spawnCount);
-            Debug.Log((spawnCount % 5) - (5 * (countSpawnedAnimal - 1)));
-            bool spawn = (spawnCount % 5) - 5 * (countSpawnedAnimal - 1) == 0;
-
-            Debug.Log("+" + countSpawnedAnimal);
-            Debug.Log(spawn);
-            if (spawn)
-            {
-                Debug.Log("spawn");
-                Vector3 animal_spot_p = animal_spot.transform.position;
-                GameObject _obj = Instantiate(dragon, animal_spot_p, Quaternion.identity) as GameObject;
-                dragons.Add(_obj);
-                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("미션 완료, 드래곤이 생성 되었습니다.");
-                countSpawnedAnimal++;
-            }
-        }*/
+        Vector3 animal_spot_p = animal_spot.transform.position;
+        GameObject _obj = Instantiate(dragon, animal_spot_p, Quaternion.identity) as GameObject;
+        dragons.Add(_obj);
+        GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 생성 되었습니다.");
     }
     public void del_animal(int type)
     {
@@ -232,7 +216,7 @@ public class Livestock : MonoBehaviour
             case 6:
                 if (dragons.Count >= 1)
                 {
-                    int randomMoney = Random.Range(0, 200000);
+                    int randomMoney = Random.Range(0, 20000);
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += randomMoney;
                     Destroy(dragons[0]);
                     dragons.RemoveAt(0);

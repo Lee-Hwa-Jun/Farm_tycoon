@@ -49,11 +49,13 @@ public class Save : MonoBehaviour
         for (int i = 0; i < isfarm_list.Length; i++) // 배열과 ','를 번갈아가며 tempStr에 저장
         {
             isfarmArr = isfarmArr + isfarm_list[i];
+            Debug.Log(isfarm_list[i]+"@@@");
             if (i < isfarm_list.Length - 1) // 최대 길이의 -1까지만 ,를 저장
             {
                 isfarmArr = isfarmArr + ",";
             }
         }
+        Debug.Log(isfarmArr+"!!");
         PlayerPrefs.SetString("isFarm", isfarmArr); // PlyerPrefs에 문자열 형태로 저장
 
         //농장 마다의 동물들

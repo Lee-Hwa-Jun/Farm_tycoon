@@ -1766,7 +1766,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8514636, y: 1.1001043, z: 0.5842908}
+  m_Size: {x: 3.8514636, y: 4, z: 0.5842908}
   m_Center: {x: -1.063152, y: 0.55005217, z: -0.15090781}
 --- !u!1 &6029007962799246973
 GameObject:
@@ -2190,7 +2190,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.8514636, y: 1.1001043, z: 0.5842908}
+  m_Size: {x: 3.8514636, y: 4, z: 0.5842908}
   m_Center: {x: -1.063152, y: 0.55005217, z: -0.15090781}
 --- !u!1 &6029007963012915690
 GameObject:
@@ -3362,7 +3362,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.525108, y: 1.1001043, z: 0.5}
+  m_Size: {x: 5.525108, y: 4, z: 0.5}
   m_Center: {x: -1.8999741, y: 0.55005217, z: -0.15701878}
 --- !u!1 &6029007963215739657
 GameObject:
@@ -8466,15 +8466,18 @@ MonoBehaviour:
   pigs: []
   lions: []
   foxs: []
+  dragons: []
   chicken: {fileID: 1948390840027810, guid: 4ed1e0628e5ec2a409b6e3e2eaa84a34, type: 3}
   cow: {fileID: 1266784798760454, guid: 09aca85bf6d6a3648b9082cc4cd4a912, type: 3}
   pig: {fileID: 1610786572798652, guid: 94a9fe51bfbbc1b4795f959450ad523a, type: 3}
   lion: {fileID: 0}
   fox: {fileID: 0}
+  dragon: {fileID: 0}
   animal_spot: {fileID: 6029007964485194136}
   chicken_sound: {fileID: 8300000, guid: c3b618b7ae201a44290e2556afd03c06, type: 3}
   cow_sound: {fileID: 8300000, guid: c01316e45a1a8d745bd9c9efb459573f, type: 3}
   lion_sound: {fileID: 0}
+  Inst: 0
 --- !u!82 &82435242186336090
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8800,7 +8803,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.525108, y: 1.1001043, z: 0.5}
+  m_Size: {x: 5.525108, y: 4, z: 0.5}
   m_Center: {x: -1.8999741, y: 0.55005217, z: -0.15701878}
 --- !u!1 &6029007964374537191
 GameObject:

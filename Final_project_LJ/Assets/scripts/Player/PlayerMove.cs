@@ -33,6 +33,8 @@ public class PlayerMove : MonoBehaviour
     private float end = 0f;             // Mathf.Lerp 메소드의 두번째 값.  
     private float time = 0f;            // Mathf.Lerp 메소드의 시간 값. 
 
+    public float playerTimer;
+
     private AudioSource click;
     private float animal_sound_time = 0;
 
@@ -46,6 +48,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
+        playerTimer += Time.deltaTime;
         animal_sound_time += Time.deltaTime;
         PlayFadeIn();
         RaycastHit hit;
@@ -128,6 +131,7 @@ public class PlayerMove : MonoBehaviour
                 }
                 catch (NullReferenceException ex)
                 {
+                    Debug.Log(ex);
                     Debug.Log("error");
                     isMove = true;
                 }
@@ -176,6 +180,12 @@ public class PlayerMove : MonoBehaviour
             one_time_text.SetActive(false);
             m_Timer2 = 0;
         }
+
+        if (playerTimer > 30.0f) //10분마다 드레곤 선물
+        {
+            GameObject.Find("hidden3").GetComponent<Livestock>().add_dragon();
+            playerTimer = 0;
+        }
     }
 
     //다른 스크립트에서 발생되는 메세지를 body에 띄워주기 위한 함수
@@ -189,7 +199,7 @@ public class PlayerMove : MonoBehaviour
 
     public void BringData()
     {
-        GameObject.Find("SaveBtn").GetComponent<Save>().CallData();
+        GameObject.Find("SaveMenu").GetComponent<Save>().CallData();
     }
     void PlayFadeIn()
     {
