@@ -227,7 +227,23 @@ public class Livestock : MonoBehaviour
                 break;
         }
     }
-
+    public bool isanimal()
+    {
+        if (chickens.Count != 0)
+        {
+            return true;
+        }
+        else if (cows.Count != 0)
+        {
+            return true;
+        }
+        else if (lions.Count != 0)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
     public void animal_sound()
     {
         if (chickens.Count != 0)

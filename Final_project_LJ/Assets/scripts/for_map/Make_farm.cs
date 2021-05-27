@@ -67,21 +67,31 @@ public class Make_farm : MonoBehaviour
         }
         if (GameObject.Find("Body").GetComponent<PlayerMove>().information == -100)
         {
-            if (child_farm != null)
+            if (!child_farm.GetComponent<Livestock>().isanimal())
             {
-                GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += price;
-                child_farm = this.transform.GetChild(1).gameObject;
-                Destroy(child_farm);
-                GameObject.Find("Body").GetComponent<PlayerMove>().information = 0;
-                message.SetActive(false);
-                sell.SetActive(true);
-                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("판매 되었습니다.");
+                if (child_farm != null)
+                {
+
+                    GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] += price;
+                    child_farm = this.transform.GetChild(1).gameObject;
+                    Destroy(child_farm);
+                    GameObject.Find("Body").GetComponent<PlayerMove>().information = 0;
+                    message.SetActive(false);
+                    sell.SetActive(true);
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("판매 되었습니다.");
+                }
+                else
+                {
+                    GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 곳을 선택해주세요.");
+                    message.SetActive(false);
+                    buy.SetActive(true);
+                }
             }
             else
             {
-                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 곳을 선택해주세요.");
+                GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("동물이 있어서 판매가 안됩니다.");
                 message.SetActive(false);
-                buy.SetActive(true);
+                sell.SetActive(true);
             }
         }
 
