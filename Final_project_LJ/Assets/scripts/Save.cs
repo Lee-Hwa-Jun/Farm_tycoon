@@ -15,7 +15,6 @@ public class Save : MonoBehaviour
     public int[] property_int = new int[] { 0, 0, 0, 0, 0, 0, 0 };
     float timer = 0.0f;
 
-    public int step;
 
     void Start()
     {
@@ -132,7 +131,6 @@ public class Save : MonoBehaviour
                 farm_spot[i].GetComponent<Make_farm>().livestock_list[1] = int.Parse(livestock[i * 2 + 1]);
             }
         }
-        step = 1;
         //식물들
         if (plants.Length != 1)
         {
@@ -144,7 +142,6 @@ public class Save : MonoBehaviour
                 farm_spot[i].GetComponent<Make_farm>().plant_list[3] = int.Parse(plants[(i * 4)+3]);
             }
         }
-        step = 2;
         //농장 자체
         if (isfarmArr.Length != 1)
         {
@@ -155,13 +152,6 @@ public class Save : MonoBehaviour
                 {
                     farm_spot[i].GetComponent<Make_farm>().make_farm();
                 }
-            }
-        }
-        if (dataArr.Length != 1)
-        {
-            for (int i = 0; i < dataArr.Length; i++)
-            {
-                GameObject.Find("Body").GetComponent<PlayerMove>().property_int[i] = System.Convert.ToInt32(dataArr[i]); // 문자열 형태로 저장된 값을 정수형으로 변환후 저장
             }
         }
 

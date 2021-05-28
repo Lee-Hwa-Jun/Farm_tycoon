@@ -53,7 +53,7 @@ public class Make_farm : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if ( GameObject.Find("Body").GetComponent<PlayerMove>().information == 100)
+        if ( GameObject.Find("Body").GetComponent<PlayerMove>().information == 100) 
         {
             if (child_farm == null)
             {
@@ -63,25 +63,19 @@ public class Make_farm : MonoBehaviour
                     GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] -= price;
                     make_farm();
                     GameObject.Find("Body").GetComponent<PlayerMove>().information = 0;
-                    message.SetActive(false);
-                    buy.SetActive(true);
-
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("구매 되었습니다.");
-
                 }
                 else
                 {
                     GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("돈이 부족합니다.");
-                    message.SetActive(false);
-                    buy.SetActive(true);
                 }
             }
             else
             {
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("다른 곳을 선택해주세요.");
-                message.SetActive(false);
-                buy.SetActive(true);
             }
+            message.SetActive(false);
+            buy.SetActive(true);
         }
         if (GameObject.Find("Body").GetComponent<PlayerMove>().information == -100)
         {

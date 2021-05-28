@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         click = GetComponent<AudioSource>();
-        speed = 10;
+        speed = 6;
         property_int[0] = Start_Money;
         img_color = img.color;
         BringData();
@@ -177,7 +177,7 @@ public class PlayerMove : MonoBehaviour
             m_Timer2 = 0;
         }
 
-        if (playerTimer > 600.0f) //10분마다 드레곤 선물
+        if (playerTimer > 130.0f) //10분마다 드레곤 선물
         {
             GameObject.Find("hidden3").GetComponent<Livestock>().add_dragon();
             playerTimer = 0;

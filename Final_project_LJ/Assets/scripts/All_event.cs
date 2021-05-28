@@ -30,11 +30,6 @@ public class All_event : MonoBehaviour
                 GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("삭제 되었습니다.");
                 this_farm.transform.parent.GetComponent<Make_farm>().plant_list[idx] = 0;
             }
-            else
-            {
-
-            }
-            //line필요
         }
         if(def == "plant_add")
         {
