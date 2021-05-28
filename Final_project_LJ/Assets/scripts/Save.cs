@@ -7,6 +7,8 @@ public class Save : MonoBehaviour
     public int[] isfarm_list;
     public int[,] livestock_list;
     public int[,] plant_list;
+    public int lions, foxs, dragons;
+
     public GameObject[] farm_spot = new GameObject[16];
 
 
@@ -47,20 +49,17 @@ public class Save : MonoBehaviour
             }
         }
 
-        GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("Saved");
         PlayerPrefs.SetString("Data", SaveArr); // PlyerPrefs에 문자열 형태로 저장
 
         //농장 자체
         for (int i = 0; i < isfarm_list.Length; i++) // 배열과 ','를 번갈아가며 tempStr에 저장
         {
             isfarmArr = isfarmArr + isfarm_list[i];
-            Debug.Log(isfarm_list[i]+"@@@");
             if (i < isfarm_list.Length - 1) // 최대 길이의 -1까지만 ,를 저장
             {
                 isfarmArr = isfarmArr + ",";
             }
         }
-        Debug.Log(isfarmArr+"!!");
         PlayerPrefs.SetString("isFarm", isfarmArr); // PlyerPrefs에 문자열 형태로 저장
 
         //농장 마다의 동물들
@@ -97,9 +96,15 @@ public class Save : MonoBehaviour
                 plants = plants + ",";
             }
         }
-        Debug.Log(plants + "@@");
         PlayerPrefs.SetString("plants", plants); // PlyerPrefs에 문자열 형태로 저장
-        
+
+        //히든몬스터
+
+        PlayerPrefs.SetInt("lions", GameObject.Find("hidden1").GetComponent<Livestock>().lions.Count); 
+        PlayerPrefs.SetInt("foxs", GameObject.Find("hidden2").GetComponent<Livestock>().foxs.Count);
+        PlayerPrefs.SetInt("dragons", GameObject.Find("hidden3").GetComponent<Livestock>().dragons.Count);
+
+        GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("Saved");
 
     }
     public void CallData()
@@ -108,6 +113,7 @@ public class Save : MonoBehaviour
         string[] isfarmArr = PlayerPrefs.GetString("isFarm").Split(',');
         string[] livestock = PlayerPrefs.GetString("livestock").Split(',');
         string[] plants = PlayerPrefs.GetString("plants").Split(',');
+        string[] hiddens = PlayerPrefs.GetString("hiddens").Split(',');
 
         //자산
         if (dataArr.Length != 1)
@@ -151,9 +157,31 @@ public class Save : MonoBehaviour
                 }
             }
         }
+        if (dataArr.Length != 1)
+        {
+            for (int i = 0; i < dataArr.Length; i++)
+            {
+                GameObject.Find("Body").GetComponent<PlayerMove>().property_int[i] = System.Convert.ToInt32(dataArr[i]); // 문자열 형태로 저장된 값을 정수형으로 변환후 저장
+            }
+        }
 
+        //히든 동물
+        for (int i = 0; i < PlayerPrefs.GetInt("lions"); i++)
+        {
+            GameObject.Find("hidden1").GetComponent<Livestock>().add_lion();
+            GameObject.Find("hidden1").GetComponent<Hidden_animal>().active=true;
+        }
+        for (int i = 0; i < PlayerPrefs.GetInt("foxs"); i++)
+        {
+            GameObject.Find("hidden2").GetComponent<Livestock>().add_fox();
+            GameObject.Find("hidden2").GetComponent<Hidden_animal>().active = true;
+        }
+        for (int i = 0; i < PlayerPrefs.GetInt("dragons"); i++)
+        {
+            GameObject.Find("hidden3").GetComponent<Livestock>().add_dragon();
+            GameObject.Find("hidden3").GetComponent<Hidden_animal>().active = true;
+        }
 
-        Debug.Log(plants + "@@");
         Debug.Log("Called");
     }
     public void reset_list()
@@ -184,5 +212,9 @@ public class Save : MonoBehaviour
         {
             farm_spot[i].GetComponent<Make_farm>().reset_all();
         }
+        GameObject.Find("hidden1").GetComponent<Livestock>().lions = new List<GameObject>();
+        GameObject.Find("hidden2").GetComponent<Livestock>().foxs = new List<GameObject>();
+        GameObject.Find("hidden3").GetComponent<Livestock>().dragons = new List<GameObject>();
+
     }
 }

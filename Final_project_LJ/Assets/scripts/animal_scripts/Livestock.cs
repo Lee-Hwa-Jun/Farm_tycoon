@@ -107,7 +107,7 @@ public class Livestock : MonoBehaviour
     }
     public void add_fox()
     {
-        if (foxs.Count < 9)
+        if (foxs.Count < 4)
         {
             if (GameObject.Find("Body").GetComponent<PlayerMove>().property_int[0] >= 70000)
             {
@@ -125,11 +125,6 @@ public class Livestock : MonoBehaviour
         GameObject.Find("Body").GetComponent<PlayerMove>().one_time_message("드래곤이 생성 되었습니다.");
     }
 
-    //load 할때 함수들
-    //load 할때 함수들
-    //load 할때 함수들
-    //load 할때 함수들
-    //load 할때 함수들
     public void load_chicken()
     {
         Vector3 animal_spot_p = animal_spot.transform.position;

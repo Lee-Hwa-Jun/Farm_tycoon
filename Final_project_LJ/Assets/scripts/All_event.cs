@@ -32,7 +32,7 @@ public class All_event : MonoBehaviour
             }
             else
             {
-                Debug.Log("error");
+
             }
             //line필요
         }

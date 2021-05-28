@@ -87,7 +87,6 @@ public class PlayerMove : MonoBehaviour
         //원클릭
         if (m_IsOneClick && ((Time.time - m_Timer) > m_DoubleClickSecond))
         {
-            Debug.Log("One Click");
             m_IsOneClick = false;
         }
 
@@ -131,8 +130,6 @@ public class PlayerMove : MonoBehaviour
                 }
                 catch (NullReferenceException ex)
                 {
-                    Debug.Log(ex);
-                    Debug.Log("error");
                     isMove = true;
                 }
             }
@@ -142,7 +139,6 @@ public class PlayerMove : MonoBehaviour
             {
                 click.Play();
                 one_time_text.SetActive(false);
-                Debug.Log("Double Click");
                 m_IsOneClick = false;
                 if (Texts.active)
                     Texts.SetActive(false);
@@ -181,7 +177,7 @@ public class PlayerMove : MonoBehaviour
             m_Timer2 = 0;
         }
 
-        if (playerTimer > 30.0f) //10분마다 드레곤 선물
+        if (playerTimer > 600.0f) //10분마다 드레곤 선물
         {
             GameObject.Find("hidden3").GetComponent<Livestock>().add_dragon();
             playerTimer = 0;

@@ -25,7 +25,5 @@ public class person_manage : MonoBehaviour
             Instantiate(person, person_spot.position, Quaternion.identity);
             time = 0.1f;
         }
-        Debug.Log("people : " + people.ToString());
-        Debug.Log("result : "+(60 / people).ToString());
     }
 }

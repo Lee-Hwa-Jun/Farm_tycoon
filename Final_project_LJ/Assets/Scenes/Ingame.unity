@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44664693, g: 0.49649364, b: 0.5748597, a: 1}
+  m_IndirectSpecularColor: {r: 0.44664675, g: 0.49649334, b: 0.57485896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -737,7 +737,7 @@ MonoBehaviour:
   active: 0
   menu: {fileID: 624038214}
   text: {fileID: 558215882}
-  animal: "\uC5EC\uC6B0"
+  animal: "\uB4DC\uB798\uACE4"
 --- !u!4 &27871276
 Transform:
   m_ObjectHideFlags: 0
@@ -8056,6 +8056,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isfarm_list: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  lions: 0
+  foxs: 0
+  dragons: 0
   farm_spot:
   - {fileID: 1788276819}
   - {fileID: 2024070645}
@@ -30371,7 +30374,10 @@ MonoBehaviour:
   chickens: []
   cows: []
   pigs: []
-  lions: []
+  lions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   foxs: []
   dragons: []
   chicken: {fileID: 0}
